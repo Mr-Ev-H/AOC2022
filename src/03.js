@@ -1,5 +1,6 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const { readLines } = require('./common');
 
 function findError(input) {
     half = input.slice(input.length / 2)
@@ -33,19 +34,6 @@ function scoreItem(char) {
     else return code + 27 - 65
 }
 
-
-function loadInput(isSample) {
-    var inputPath;
-    if (isSample)
-        inputPath = path.resolve('./data/03testdata.txt')
-    else {
-        inputPath = path.resolve('./data/03data.txt')
-    }
-    const data = fs.readFileSync(inputPath, 'utf-8')
-    output = data.split('\n')
-    return output
-}
-
 function solve1(input) {
     let score = 0
     for (const line of input) {
@@ -63,9 +51,9 @@ function solve2(input) {
     return score
 }
 
-module.exports = { findError, scoreItem, loadInput, solve1, findCommon };
+module.exports = { findError, scoreItem, solve1, solve2, findCommon };
 
 scoreItem('a')
 
-console.log(solve1(loadInput(false)))
-console.log(solve2(loadInput(false)))
+console.log(solve1(readLines(3, false)))
+console.log(solve2(readLines(3, false)))

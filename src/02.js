@@ -1,5 +1,6 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const { readLines } = require('./common');
 
 const winMov = { 'r': 'p', 'p': 's', 's': 'r' }
 const losMov = { 'p': 'r', 's': 'p', 'r': 's' }
@@ -77,7 +78,7 @@ function loadInput(isSample) {
     return output
 }
 
-module.exports = { solve1, solve2, loadInput };
+module.exports = { solve1, solve2 };
 
-console.log(solve1(loadInput(false)))
-console.log(solve2(loadInput(false)))
+console.log(solve1(readLines(2, false)))
+console.log(solve2(readLines(2, false)))

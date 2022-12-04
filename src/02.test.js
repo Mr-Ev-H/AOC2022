@@ -1,4 +1,5 @@
 const day2 = require('./02');
+const { readLines } = require('./common');
 
 test('Sums rules correctly', () => {
     const rules = ['A Y', 'B X', 'C Z']
@@ -21,9 +22,9 @@ test('Sums part 2 rules correctly', () => {
 });
 
 test('Produces correct answer for part 1', () => {
-    expect(day2.solve1(day2.loadInput(false))).toBe(9651);
+    expect(day2.solve1(readLines(2, false))).toBe(9651);
 });
 
 test('Produces correct answer for part 2', () => {
-    expect(day2.solve2(day2.loadInput(false))).toBe(10560);
+    expect(day2.solve2(readLines(2, false))).toBe(10560);
 });

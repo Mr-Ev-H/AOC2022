@@ -35,8 +35,8 @@ function solve2(sample) {
     return topThree(loadInput(sample))
 }
 
-module.exports = { maxCalories, solve1, solve2 };
-
 sample = false
 console.log(solve1(sample))
 console.log(solve2(sample))
+
+module.exports = { maxCalories, solve1, solve2 };
